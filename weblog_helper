@@ -1,0 +1,10 @@
+# Compiles the WebLogParser.java and WebLogParserTest.java files while providing the necessary jar files.
+javac -d bin/ -cp '.:lib/commons-net-3.6.jar:lib/hamcrest-all-1.3.jar:lib/junit-4.12.jar' src/main/java/WebLogParser.java src/test/java/WebLogParserTest.java
+
+# Runs the WebLogParser file and passes the command line arguments to it.
+java -cp '.:bin/:lib/commons-net-3.6.jar:lib/hamcrest-all-1.3.jar:lib/junit-4.12.jar' WebLogParser "$@"
+
+# Runs the unittests from the WebLogParserTest file.
+java -cp '.:bin/:lib/commons-net-3.6.jar:lib/hamcrest-all-1.3.jar:lib/junit-4.12.jar' org.junit.runner.JUnitCore WebLogParserTest
+
+
